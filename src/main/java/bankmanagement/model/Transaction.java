@@ -3,14 +3,9 @@ package bankmanagement.model;
 import java.util.Date;
 
 class Transaction{
-    enum typeTransaction{
-        depot,
-        retraits,
-        virement
-    }
 
     private Integer idTransaction;
-    typeTransaction typeTransaction;
+    TypeTransaction typeTransaction;
     private Float montant;
     private Date date;
     private Integer idCompteSource;
@@ -56,10 +51,10 @@ class Transaction{
     }
 
     //getters & setters typeTransaction
-    public typeTransaction getTypeTransaction() {
+    public TypeTransaction getTypeTransaction() {
         return typeTransaction;
     }
-    public void setTypeTransaction(typeTransaction typeTransaction) {
+    public void setTypeTransaction(TypeTransaction typeTransaction) {
         this.typeTransaction = typeTransaction;
     }
 

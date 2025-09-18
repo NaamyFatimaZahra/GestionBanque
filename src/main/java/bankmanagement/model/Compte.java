@@ -3,13 +3,11 @@ package bankmanagement.model;
 import java.util.HashMap;
 
 public class Compte{
-    enum typeCompte{
-        courant,
-        eparnge
-    }
+
+    private TypeCompte typeCompte;
     private int numeroCompte;
     private float Solde;
-    typeCompte typeDeCompte;
+    TypeCompte typeDeCompte;
     HashMap<Integer, String> historiqueTransaction = new HashMap<Integer, String>();
 
     public float getSolde() {
@@ -32,7 +30,8 @@ public class Compte{
         this.historiqueTransaction = historiqueTransaction;
     }
 
-    public typeCompte getTypeDeCompte() {
+    public TypeCompte getTypeDeCompte() {
+
         return typeDeCompte;
     }
 
