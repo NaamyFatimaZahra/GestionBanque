@@ -27,7 +27,7 @@ public class DeleteCompteClient {
         System.out.print("Entrer l'ID du client : ");
         int idClientASupprime = sc.nextInt();
         sc.nextLine();
-         return Client.getClients(idClientASupprime);
+         return Client.getClientByID(idClientASupprime);
     }
 
 

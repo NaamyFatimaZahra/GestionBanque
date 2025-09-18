@@ -28,7 +28,7 @@ public class Client extends Personne {
         return comptes;
     }
 
-    public static Client getClients(int  idClientASupprime) {
+    public static Client getClientByID(int  idClientASupprime) {
 
 
         HashSet<Client> banqueClients = Banque.clients;
@@ -44,4 +44,6 @@ public class Client extends Personne {
         System.out.println("Client introuvable !");
         return null;
     }
+
+
 }
