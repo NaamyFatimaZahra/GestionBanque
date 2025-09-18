@@ -2,44 +2,51 @@ package bankmanagement.model;
 
 abstract class Personne {
 
-    protected  String nom;
-    protected String prenom;
-    protected String email;
-    protected String motDePasse;
+    protected char nom;
+    protected char prenom;
+    protected char email;
+    protected char motDePasse;
+
+    public Personne(char nom, char prenom, char email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+
+    }
+
 
     //getters & setters nom
-
-    public String getNom() {
+    public char getNom() {
         return nom;
 
     }
-    public void setNom(String nom) {
+    public void setNom(char nom) {
         this.nom = nom;
     }
 
 
 
     //getters & setters prenom
-    public String getPrenom() {
+    public char getPrenom() {
         return prenom;
     }
-    public void setPrenom(String prenom) {
+    public void setPrenom(char prenom) {
         this.prenom = prenom;
     }
 
     //getters & setters email
-    public String getEmail() {
+    public char getEmail() {
         return email;
     }
-    public void setEmail(String email) {
+    public void setEmail(char email) {
         this.email = email;
     }
 
     //getters & setters motDePasse
-    public String getMotDePasse() {
+    public char getMotDePasse() {
         return motDePasse;
     }
-    public void setMotDePasse(String motDePasse) {
+    public void setMotDePasse(char motDePasse) {
         this.motDePasse = motDePasse;
     }
 }

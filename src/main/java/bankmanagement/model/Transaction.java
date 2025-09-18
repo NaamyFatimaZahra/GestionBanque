@@ -4,12 +4,21 @@ import java.util.Date;
 
 class Transaction{
 
-    private Integer idTransaction;
+    private int idTransaction;
     TypeTransaction typeTransaction;
-    private Float montant;
+    private float montant;
     private Date date;
-    private Integer idCompteSource;
-    private Integer idCompteDestination;
+    private int idCompteSource;
+    private int idCompteDestination;
+
+    public Transaction(int idTransaction, TypeTransaction typeTransaction, float montant, Date date, int idCompteSource, int idCompteDestination) {
+        this.idTransaction=idTransaction;
+        this.typeTransaction=typeTransaction;
+        this.montant=montant;
+        this.date=date;
+        this.idCompteSource=idCompteSource;
+        this.idCompteDestination=idCompteDestination;
+    }
 
     //getters & setters date
     public Date getDate() {

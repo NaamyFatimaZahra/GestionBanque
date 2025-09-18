@@ -10,6 +10,13 @@ public class Compte{
     TypeCompte typeDeCompte;
     HashMap<Integer, String> historiqueTransaction = new HashMap<Integer, String>();
 
+    public Compte(TypeCompte typeCompte, int numeroCompte, float Solde, TypeCompte typeDeCompte){
+        this.typeCompte=typeCompte;
+        this.numeroCompte=numeroCompte;
+        this.Solde=Solde;
+        this.typeDeCompte=typeDeCompte;
+    }
+
     public float getSolde() {
         return Solde;
     }
