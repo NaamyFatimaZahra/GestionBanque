@@ -1,5 +1,6 @@
 package bankmanagement.service;
 
+import bankmanagement.classesUtilitaire.NumeroDeCompteGenerator;
 import bankmanagement.classesUtilitaire.PasswordGenerator;
 import bankmanagement.model.Banque;
 import bankmanagement.model.Client;
@@ -16,7 +17,7 @@ public class CreationDeCompteClient {
 
     private Map<String, String> users = new HashMap<>();
     private Scanner sc=new Scanner(System.in);
-    private static int numCompte = 0;
+
     private Compte  newCompte;
     private Client newClient;
 
@@ -30,7 +31,8 @@ public class CreationDeCompteClient {
 
 
     public Compte CreateCompte(){
-         this.newCompte = new Compte(0, TypeCompte.courant);
+        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
+         this.newCompte = new Compte(numCompte,0, TypeCompte.courant);
 return this.newCompte;
 
     }
@@ -47,6 +49,5 @@ return this.newCompte;
         this.newClient=new Client(nom,prenom,email,motDePasse,this.newCompte);
         return this.newClient;
     }
-
 
 }

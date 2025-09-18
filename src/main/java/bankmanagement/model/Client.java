@@ -1,6 +1,7 @@
 package bankmanagement.model;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Client extends Personne {
     private static int compteur = 0;
@@ -25,5 +26,22 @@ public class Client extends Personne {
     // Getter comptes
     public HashMap<String, Compte> getComptes() {
         return comptes;
+    }
+
+    public static Client getClients(int  idClientASupprime) {
+
+
+        HashSet<Client> banqueClients = Banque.clients;
+
+        for (Client c : banqueClients) {
+            if (c.getId() == idClientASupprime) {
+                System.out.println("Client trouvé : " + c.getComptes().get("Current").getNumeroCompte());
+                return c;
+            }
+        }
+
+
+        System.out.println("Client introuvable !");
+        return null;
     }
 }
