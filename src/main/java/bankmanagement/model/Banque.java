@@ -15,5 +15,9 @@ public class Banque {
         System.out.println("Le client " + client.getNom() + " a été enregistré avec succès !");
     }
 
+    public static void stockCompte(Compte compte){
+
+    }
+
 
 }

@@ -12,7 +12,6 @@ public class Compte{
     HashSet<Transaction> historiqueTransaction = new HashSet<>();
 
     public Compte(String compteur,float solde, TypeCompte typeDeCompte) {
-
         this.numeroCompte = compteur;
         this.solde = solde;
         this.typeCompte = typeDeCompte;

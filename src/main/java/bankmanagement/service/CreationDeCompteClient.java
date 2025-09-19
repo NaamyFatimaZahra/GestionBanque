@@ -23,21 +23,25 @@ public class CreationDeCompteClient {
 
     public static void main(String[] args) {
         CreationDeCompteClient compteClient = new CreationDeCompteClient();
-        compteClient.CreateCompte();
-        Client client =compteClient.CreateClient();
-        new Banque().stockerClient(client);
+
+        int Choix=compteClient.afficherChoiceCompte();
+       switch (Choix) {
+           case 1: {
+               compteClient.CreateCompteCourant();
+               Client client = compteClient.CreateClient();
+               new Banque().stockerClient(client);
+                break;
+           }
+               case 2: {
+                   compteClient.CreateCompteEpargne();
+                   System.out.println("compte epargne cree avec succee.");
+                   break;
+               }
+       }
     }
 
 
-
-    public Compte CreateCompte(){
-        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
-         this.newCompte = new Compte(numCompte,0, TypeCompte.courant);
-return this.newCompte;
-
-    }
     public Client CreateClient(){
-
         System.out.println("=== Inscription ===");
         System.out.print("Entrez le nom d'utilisateur : ");
         String nom = sc.nextLine();
@@ -48,6 +52,46 @@ return this.newCompte;
         String motDePasse = PasswordGenerator.generatePassword(10);
         this.newClient=new Client(nom,prenom,email,motDePasse,this.newCompte);
         return this.newClient;
+    }
+
+
+    public Compte CreateCompteCourant(){
+        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
+        this.newCompte = new Compte(numCompte,0, TypeCompte.courant);
+        return this.newCompte;
+    }
+
+
+    public void CreateCompteEpargne(){
+          Client clientById= this.afficherEnterIdClient();
+        if (clientById == null) {
+            System.out.println("Client introuvable !");
+            return ;
+        }
+        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
+        this.newCompte = new Compte(numCompte,0, TypeCompte.eparnge);
+        clientById.getComptes().put("epargne",this.newCompte);
+        clientById.getComptes().forEach((type, compte) -> {
+            System.out.println(type + " -> Numéro : " + compte.getNumeroCompte());
+        });
+
+    }
+
+    public Client afficherEnterIdClient() {
+        System.out.print("Entrer l'ID du client : ");
+        int idClientASupprime = sc.nextInt();
+        sc.nextLine();
+        return Client.getClientByID(idClientASupprime);
+    }
+
+    public int afficherChoiceCompte(){
+        System.out.println("choisi votre compte :");
+        System.out.println("1-Courant");
+        System.out.println("2-epargne");
+         int choix= sc.nextInt();
+       sc.nextLine();
+         return choix;
+
     }
 
 }

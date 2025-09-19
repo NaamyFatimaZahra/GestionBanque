@@ -15,7 +15,7 @@ public class Client extends Personne {
         this.id = compteur;
 
         this.comptes = new HashMap<>();
-        this.comptes.put("Current", compte); // clé = numéro du compte
+        this.comptes.put("courant", compte);
     }
 
     // Getter Id
@@ -35,7 +35,6 @@ public class Client extends Personne {
 
         for (Client c : banqueClients) {
             if (c.getId() == idClientASupprime) {
-                System.out.println("Client trouvé : " + c.getComptes().get("Current").getNumeroCompte());
                 return c;
             }
         }
