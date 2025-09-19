@@ -1,20 +1,21 @@
 package bankmanagement.model;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Compte{
 
     private TypeCompte typeCompte;
     private int numeroCompte;
     private float Solde;
-    TypeCompte typeDeCompte;
-    HashMap<Integer, String> historiqueTransaction = new HashMap<Integer, String>();
+
+    HashSet<Transaction> historiqueTransaction = new HashSet<Transaction>();
 
     public Compte(TypeCompte typeCompte, int numeroCompte, float Solde, TypeCompte typeDeCompte){
         this.typeCompte=typeCompte;
         this.numeroCompte=numeroCompte;
         this.Solde=Solde;
-        this.typeDeCompte=typeDeCompte;
+        this.typeCompte=typeDeCompte;
     }
 
     public float getSolde() {
@@ -30,16 +31,16 @@ public class Compte{
     public void setNumeroCompte(int numeroCompte) {
         this.numeroCompte = numeroCompte;
     }
-    public HashMap<Integer, String> getHistoriqueTransaction() {
+    public HashSet<Transaction> getHistoriqueTransaction() {
         return historiqueTransaction;
     }
-    public void setHistoriqueTransaction(HashMap<Integer, String> historiqueTransaction) {
+    public void setHistoriqueTransaction(HashSet<Transaction> historiqueTransaction) {
         this.historiqueTransaction = historiqueTransaction;
     }
-
     public TypeCompte getTypeDeCompte() {
-
-        return typeDeCompte;
+        return typeCompte;
     }
+
+
 
 }
