@@ -1,10 +1,10 @@
 package  bankmanagement.model;
 
- public class GestionBanque extends Personne
+ public class Gestionnaire extends Personne
 {
 
    private int  idGestionnaire;
-   public GestionBanque(String nom, String prenom, String email,String motDePasse,int idGestionnaire){
+   public Gestionnaire(String nom, String prenom, String email, String motDePasse, int idGestionnaire){
        super(nom, prenom, email, motDePasse);
        this.idGestionnaire=idGestionnaire;
    }

@@ -5,15 +5,15 @@ import java.util.HashSet;
 
 public class Compte{
     private TypeCompte typeCompte;
-    private static int compteur = 0;  // compteur global
-    private int numeroCompte;          // numéro propre à chaque compte
+    private static int compteur = 0;
+    private int numeroCompte;
     private float solde;
 
     HashSet<Transaction> historiqueTransaction = new HashSet<>();
 
     public Compte(float solde, TypeCompte typeDeCompte) {
         compteur++;
-        this.numeroCompte = compteur;  // numéro unique
+        this.numeroCompte = compteur;
         this.solde = solde;
         this.typeCompte = typeDeCompte;
     }
