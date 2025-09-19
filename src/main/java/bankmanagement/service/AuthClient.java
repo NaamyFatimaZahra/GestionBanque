@@ -22,14 +22,18 @@ public class AuthClient {
             return;
         }
 
-        System.out.println("✅ Bienvenue " + client.getNom());
+        System.out.println(" Bienvenue " + client.getNom());
 
         if (client.getComptes().size() == 1) {
-            // Un seul compte
-            Compte compte = client.getComptes().values().iterator().next();
-            afficherCompte(compte);
+
+
+            for (Compte c : client.getComptes().values()) {
+                afficherCompte(c);
+                break;
+            }
+
+
         } else {
-            // Plusieurs comptes
             System.out.println("Choisissez un compte : ");
             int i = 1;
             for (String type : client.getComptes().keySet()) {

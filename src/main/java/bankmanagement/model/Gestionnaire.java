@@ -1,9 +1,12 @@
 package  bankmanagement.model;
 
- public class Gestionnaire extends Personne
+import java.util.ArrayList;
+
+public class Gestionnaire extends Personne
 {
 
    private int  idGestionnaire;
+   ArrayList<Integer> ArrayList=new ArrayList<Integer>();
    public Gestionnaire(String nom, String prenom, String email, String motDePasse, int idGestionnaire){
        super(nom, prenom, email, motDePasse);
        this.idGestionnaire=idGestionnaire;

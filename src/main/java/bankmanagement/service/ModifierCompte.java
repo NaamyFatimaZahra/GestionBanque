@@ -15,7 +15,7 @@ public class ModifierCompte {
         if (client != null) {
             modif.modifierClient(client);
         } else {
-            System.out.println("⚠️ Client introuvable !");
+            System.out.println("Client introuvable !");
         }
     }
 

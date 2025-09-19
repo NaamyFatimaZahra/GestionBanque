@@ -23,7 +23,6 @@ public class CreationDeCompteClient {
 
     public static void main(String[] args) {
         CreationDeCompteClient compteClient = new CreationDeCompteClient();
-
         int Choix=compteClient.afficherChoiceCompte();
        switch (Choix) {
            case 1: {
@@ -31,6 +30,7 @@ public class CreationDeCompteClient {
                Client client = compteClient.CreateClient();
                new Banque().stockerClient(client);
                 break;
+
            }
                case 2: {
                    compteClient.CreateCompteEpargne();
