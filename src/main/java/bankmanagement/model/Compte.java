@@ -4,43 +4,41 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Compte{
-
     private TypeCompte typeCompte;
-    private int numeroCompte;
-    private float Solde;
+    private static int compteur = 0;  // compteur global
+    private int numeroCompte;          // numéro propre à chaque compte
+    private float solde;
 
-    HashSet<Transaction> historiqueTransaction = new HashSet<Transaction>();
+    HashSet<Transaction> historiqueTransaction = new HashSet<>();
 
-    public Compte(TypeCompte typeCompte, int numeroCompte, float Solde, TypeCompte typeDeCompte){
-        this.typeCompte=typeCompte;
-        this.numeroCompte=numeroCompte;
-        this.Solde=Solde;
-        this.typeCompte=typeDeCompte;
+    public Compte(float solde, TypeCompte typeDeCompte) {
+        compteur++;
+        this.numeroCompte = compteur;  // numéro unique
+        this.solde = solde;
+        this.typeCompte = typeDeCompte;
     }
 
-    public float getSolde() {
-        return Solde;
-    }
-
-    public void setSolde(float solde) {
-        Solde = solde;
-    }
     public int getNumeroCompte() {
         return numeroCompte;
     }
-    public void setNumeroCompte(int numeroCompte) {
-        this.numeroCompte = numeroCompte;
-    }
-    public HashSet<Transaction> getHistoriqueTransaction() {
-        return historiqueTransaction;
-    }
-    public void setHistoriqueTransaction(HashSet<Transaction> historiqueTransaction) {
-        this.historiqueTransaction = historiqueTransaction;
-    }
+
     public TypeCompte getTypeDeCompte() {
         return typeCompte;
     }
 
+    public float getSolde() {
+        return solde;
+    }
 
+    public void setSolde(float solde) {
+        this.solde = solde;
+    }
 
+    public HashSet<Transaction> getHistoriqueTransaction() {
+        return historiqueTransaction;
+    }
+
+    public void setHistoriqueTransaction(HashSet<Transaction> historiqueTransaction) {
+        this.historiqueTransaction = historiqueTransaction;
+    }
 }

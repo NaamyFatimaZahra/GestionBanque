@@ -2,28 +2,28 @@ package bankmanagement.model;
 
 import java.util.HashMap;
 
-public class Client extends Personne{
+public class Client extends Personne {
+    private static int compteur = 0;
     private int id;
-    HashMap<String,Compte> compte = new HashMap<String, Compte>();
+    private HashMap<Integer, Compte> comptes;
 
-    public Client(char nom, char prenom, char email, int id, HashMap<String,Compte> compte){
-        super(nom, prenom, email);
-        this.id=id;
-        this.compte=compte;
+    public Client(String nom, String prenom, String email, String motDePasse, Compte compte) {
+        super(nom, prenom, email, motDePasse);
+
+        compteur++;
+        this.id = compteur;
+
+        this.comptes = new HashMap<>();
+        this.comptes.put(compte.getNumeroCompte(), compte); // clé = numéro du compte
     }
 
-
-    //getter Id
+    // Getter Id
     public int getId() {
         return id;
     }
 
-    //getter Compte
-    public HashMap<String, Compte> getCompte() {
-        return compte;
-    }
-    //setter Compte
-    public void setCompte(HashMap<String, Compte> compte) {
-        this.compte = compte;
+    // Getter comptes
+    public HashMap<Integer, Compte> getComptes() {
+        return comptes;
     }
 }

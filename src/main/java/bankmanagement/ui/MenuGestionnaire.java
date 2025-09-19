@@ -1,5 +1,7 @@
 package bankmanagement.ui;
 
+import bankmanagement.service.CreationDeCompteClient;
+
 import java.util.Scanner;
 
 public class MenuGestionnaire {
@@ -25,7 +27,7 @@ public class MenuGestionnaire {
 
     public void traiterChoix(int choix) {
         switch (choix) {
-            case 1 -> System.out.println(">> Création d’un compte en cours...");
+            case 1 -> CreationDeCompteClient.main(new String[]{});
             case 2 -> System.out.println(">> Clôture d’un compte en cours...");
             case 3 -> System.out.println(">> Modification d’un compte en cours...");
             case 4 -> System.out.println(">> Consultation du relevé bancaire...");

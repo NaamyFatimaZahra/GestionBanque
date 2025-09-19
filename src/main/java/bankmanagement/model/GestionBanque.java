@@ -4,9 +4,8 @@ package  bankmanagement.model;
 {
 
    private int  idGestionnaire;
-
-   public GestionBanque(char nom, char prenom, char email, int idGestionnaire){
-       super(nom, prenom, email);
+   public GestionBanque(String nom, String prenom, String email,String motDePasse,int idGestionnaire){
+       super(nom, prenom, email, motDePasse);
        this.idGestionnaire=idGestionnaire;
    }
 
