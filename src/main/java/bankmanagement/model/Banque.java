@@ -13,11 +13,11 @@ public class Banque {
     {
       clients.add(client);
         System.out.println("Le client " + client.getNom() + " a été enregistré avec succès !");
+        System.out.println("Email : " + client.getEmail());
+        System.out.println("Mot de passe généré : " + client.getMotDePasse());
     }
 
-    public static void stockCompte(Compte compte){
 
-    }
 
 
 }

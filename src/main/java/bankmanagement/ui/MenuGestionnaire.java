@@ -37,7 +37,7 @@ public class MenuGestionnaire {
                 case 6 -> System.out.println(">> Ajout d’un compte épargne en cours...");
                 case 7 -> {
                     System.out.println("Au revoir !");
-                    quitter = true;
+                   return;
                 }
                 default -> System.out.println("Choix invalide, veuillez réessayer.");
             }

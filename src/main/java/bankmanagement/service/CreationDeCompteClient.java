@@ -56,7 +56,7 @@ public class CreationDeCompteClient {
 
 
     public Compte CreateCompteCourant(){
-        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
+        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(14);
         this.newCompte = new Compte(numCompte,0, TypeCompte.courant);
         return this.newCompte;
     }
@@ -68,7 +68,7 @@ public class CreationDeCompteClient {
             System.out.println("Client introuvable !");
             return ;
         }
-        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(7);
+        String numCompte= NumeroDeCompteGenerator.generateNumeroDeCompte(14);
         this.newCompte = new Compte(numCompte,0, TypeCompte.eparnge);
         clientById.getComptes().put("epargne",this.newCompte);
         clientById.getComptes().forEach((type, compte) -> {

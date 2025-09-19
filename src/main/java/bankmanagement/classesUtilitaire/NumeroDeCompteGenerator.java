@@ -3,7 +3,7 @@ package bankmanagement.classesUtilitaire;
 import java.security.SecureRandom;
 import java.security.SecureRandom;
 public class NumeroDeCompteGenerator {
-    private static final String CHARS = "0123456789!@#$%&*";
+    private static final String CHARS = "0123456789";
 
     public static String generateNumeroDeCompte(int length) {
         SecureRandom random = new SecureRandom();
