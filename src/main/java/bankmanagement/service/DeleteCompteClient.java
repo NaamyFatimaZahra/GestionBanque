@@ -30,7 +30,7 @@ public class DeleteCompteClient {
 
         for (Client c : banqueClients) {
             if (c.getId() == idClientASupprime) {
-                System.out.println("Client trouvé : " + c);
+                System.out.println("Client trouvé : " + c.getComptes().get("Current").getNumeroCompte());
                 return c;
             }
         }

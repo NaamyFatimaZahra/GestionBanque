@@ -22,13 +22,8 @@ public class CreationDeCompteClient {
 
     public static void main(String[] args) {
         CreationDeCompteClient compteClient = new CreationDeCompteClient();
-
-
-            compteClient.CreateCompte();
+        compteClient.CreateCompte();
         Client client =compteClient.CreateClient();
-
-
-
         new Banque().stockerClient(client);
     }
 
